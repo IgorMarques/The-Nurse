@@ -8,10 +8,12 @@ Alert whoever you want when your apps are in a bad shape. It uses [Sickbay](http
 
 ## How does it work?
 
-- Register the many apps you want to be monitored (with Name, URL to be checked and the HTTP statuses that indicate your app is fine).
+1. Register the many apps you want to be monitored (with Name, URL to be checked and the HTTP statuses that indicate your app is fine).
 - Every X minutes (completely up to you) The Nurse checks your apps
 - If N of last M requests (again, completely up to you) returns a status code different from the one you expect, The Nurse will warn the Doctor about it.
   - This warn is a POST request containing the name of the service, its URL and the last M HTTP codes received. This POST will be sent to whoever URL you want.
+
+Notice: The app also registers an entry you your DB for each health check. This way you can easily go back in time and check how was your app at any given time.
 
 ## Why?
 
@@ -105,6 +107,22 @@ This will start all the components of the app:
 - [Sidekiq](https://github.com/mperham/sidekiq) for background jobs
 
 You can also start each component alone. Check the Procfile for more info.
+
+## Other use cases
+
+As mentioned earlier, you can use The Nurse to check the health at your app at any given time The Nurse was paying attention to it.
+
+All health checks are stored into [Statuses](https://github.com/IgorMarques/The-Nurse/blob/master/app/models/status.rb) entries. Feel free to run the SQL or active record queries you like to fetch whatever data you want.
+
+Example:
+
+```ruby
+2.3.1 :001 > Service.first.statuses
+
+  Service Load (28.0ms)  SELECT  "services".* FROM "services" ORDER BY "services"."id" ASC LIMIT $1  [["LIMIT", 1]]
+  Status Load (55.4ms)  SELECT "statuses".* FROM "statuses" WHERE "statuses"."service_id" = $1  [["service_id", 1]]
+ => #<ActiveRecord::Associations::CollectionProxy [#<Status id: 1, code: 200, service_id: 1, created_at: "2016-11-29 19:25:31", updated_at: "2016-11-29 19:25:31">, #<Status id: 3, code: 200, service_id: 1, created_at: "2016-11-30 17:04:08", updated_at: "2016-11-30 17:04:08">, #<Status id: 6, code: 200, service_id: 1, created_at: "2016-11-30 17:04:59", updated_at: "2016-11-30 17:04:59">, #<Status id: 9, code: 200, service_id: 1, created_at: "2016-11-30 17:05:58", updated_at: "2016-11-30 17:05:58">, #<Status id: 12, code: 200, service_id: 1, created_at: "2016-11-30 17:06:59", updated_at: "2016-11-30 17:06:59">]>
+```
 
 ## Testing
 
