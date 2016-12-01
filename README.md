@@ -2,6 +2,10 @@
 
 Alert whoever you want when your apps are in a bad shape. It uses [Sickbay](https://github.com/IgorMarques/sickbay) for app monitoring.
 
+[![Code Climate](https://codeclimate.com/github/IgorMarques/The-Nurse/badges/gpa.svg)](https://codeclimate.com/github/IgorMarques/The-Nurse)
+[![Build Status](https://travis-ci.org/IgorMarques/The-Nurse.svg?branch=master)](https://travis-ci.org/IgorMarques/The-Nurse)
+[![Coverage Status](https://coveralls.io/repos/github/IgorMarques/The-Nurse/badge.svg?branch=master)](https://coveralls.io/github/IgorMarques/The-Nurse?branch=master)
+
 ## How does it work?
 
 - Register the many apps you want to be monitored (with Name, URL to be checked and the HTTP statuses that indicate your app is fine).
@@ -118,8 +122,8 @@ This project is compatible with heroku. Following [their tutorial](https://devce
 
 There's still a lot to be done. Here are some features planed:
 
-- [] Web interface with the live status of each registered service
-- [] Web interface for managing (creating, editing, deleting, etc) services
-- [] Support for reading data from multiple Sickbay instances at once
+- [ ] Web interface with the live status of each registered service
+- [ ] Web interface for managing (creating, editing, deleting, etc) services
+- [ ] Support for reading data from multiple Sickbay instances at once
 
 Feel free to contribute with a PR :)
