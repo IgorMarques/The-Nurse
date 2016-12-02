@@ -124,6 +124,15 @@ Example:
  => #<ActiveRecord::Associations::CollectionProxy [#<Status id: 1, code: 200, service_id: 1, created_at: "2016-11-29 19:25:31", updated_at: "2016-11-29 19:25:31">, #<Status id: 3, code: 200, service_id: 1, created_at: "2016-11-30 17:04:08", updated_at: "2016-11-30 17:04:08">, #<Status id: 6, code: 200, service_id: 1, created_at: "2016-11-30 17:04:59", updated_at: "2016-11-30 17:04:59">, #<Status id: 9, code: 200, service_id: 1, created_at: "2016-11-30 17:05:58", updated_at: "2016-11-30 17:05:58">, #<Status id: 12, code: 200, service_id: 1, created_at: "2016-11-30 17:06:59", updated_at: "2016-11-30 17:06:59">]>
 ```
 
+You can do the same for outages:
+
+```ruby
+2.3.1 :013 > Service.first.statuses
+  Service Load (0.3ms)  SELECT  "services".* FROM "services" ORDER BY "services"."id" ASC LIMIT $1  [["LIMIT", 1]]
+  Status Load (40.5ms)  SELECT "statuses".* FROM "statuses" WHERE "statuses"."service_id" = $1  [["service_id", 1]]
+ => #<ActiveRecord::Associations::CollectionProxy [#<Status id: 1, code: 200, service_id: 1, created_at: "2016-11-29 19:25:31", updated_at: "2016-11-29 19:25:31">, #<Status id: 3, code: 200, service_id: 1, created_at: "2016-11-30 17:04:08", updated_at: "2016-11-30 17:04:08">, #<Status id: 6, code: 200, service_id: 1, created_at: "2016-11-30 17:04:59", updated_at: "2016-11-30 17:04:59">, #<Status id: 9, code: 200, service_id: 1, created_at: "2016-11-30 17:05:58", updated_at: "2016-11-30 17:05:58">, #<Status id: 12, code: 200, service_id: 1, created_at: "2016-11-30 17:06:59", updated_at: "2016-11-30 17:06:59">]>
+ ```
+
 ## Testing
 
 This app uses Rspec for testing. To run the test suit:
