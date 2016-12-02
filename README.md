@@ -143,7 +143,7 @@ $ rspec
 
 ## Deploying
 
-This project is compatible with heroku. Following [their tutorial](https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction) should be enough
+This project is compatible with heroku. Following [their tutorial](https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction) should be enough. You'll need at least one paid dyno, since the free plans only support up to two (and we have three components: the server, Sidekiq and Clockwork). Also remember to properly config a Redis to Go addon.
 
 ## Plans for the future and contributing
 
