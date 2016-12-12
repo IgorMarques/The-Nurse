@@ -35,8 +35,8 @@ This setup assumes you have a proper Ruby workspace setted up with:
 Just run:
 
 ```
-$ git clone http://github.com/IgorMarques/sickbay
-$ cd sickbay
+$ git clone http://github.com/IgorMarques/The-Nurse
+$ cd The-Nurse
 $ bundle install
 $ rake db:create db:migrate
 ```
