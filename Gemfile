@@ -16,6 +16,7 @@ gem 'foreman'
 gem 'mixlib-config', require: 'mixlib/config'
 gem 'pg'
 gem 'sidekiq'
+gem 'simple_form'
 
 group :development do
   gem 'web-console', '~> 2.0'
