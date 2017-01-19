@@ -4,13 +4,13 @@ RSpec.describe StatusFetcher do
   describe '#call' do
     let(:services) do
       {
-        'ExampleService' => 'www.example-service.com',
+        'ExampleService' => 'http://www.example-service.com',
         'SomeOtherService' => 'www.some-other-service.com',
       }
     end
 
     before do
-      stub_request(:get, sickbay_url + '?ExampleService=www.example-service.com&SomeOtherService=www.some-other-service.com')
+      stub_request(:get, sickbay_url + '?ExampleService=http://www.example-service.com&SomeOtherService=www.some-other-service.com')
       .to_return(
         request_return
       )

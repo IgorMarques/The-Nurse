@@ -9,7 +9,7 @@ RSpec.describe OutageHandler do
     let(:service) do
       Service.create(
         name: 'ExampleService',
-        url: 'www.example-service.com',
+        url: 'http://www.example-service.com',
         allowed_codes: [200]
       )
     end

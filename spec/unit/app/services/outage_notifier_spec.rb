@@ -5,7 +5,7 @@ RSpec.describe OutageNotifier do
     let(:service) do
       Service.create(
         name: 'ExampleService',
-        url: 'www.example-service.com',
+        url: 'http://http://www.example-service.com',
         allowed_codes: [200]
       )
     end
@@ -16,7 +16,7 @@ RSpec.describe OutageNotifier do
 
     before do
       stub_request(:post, Configurations.doctor_url).
-         with(:body => {"codes"=> codes, "service_name"=>"ExampleService", "service_url"=>"www.example-service.com"})
+         with(:body => {"codes"=> codes, "service_name"=>"ExampleService", "service_url"=>"http://http://www.example-service.com"})
     end
 
     it 'sends a POST call to your Doctor endpoint' do

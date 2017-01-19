@@ -56,7 +56,7 @@ $ bundle exec rails console
 And to create the apps, run this inside the console:
 
 ```
-Service.create(name: 'ExampleService', url: 'www.example-service.com/health', allowed_codes: [200])
+Service.create(name: 'ExampleService', url: 'http://http://www.-service.com/health', allowed_codes: [200])
 ```
 
 **NOTICE: The `allowed_codes` field is an array**

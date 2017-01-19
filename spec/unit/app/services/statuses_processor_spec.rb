@@ -14,14 +14,14 @@ RSpec.describe StatusesProcessor do
       let!(:first_service) do
         Service.create(
           name: 'ExampleService',
-          url: 'www.example-service.com'
+          url: 'http://www.example-service.com'
         )
       end
 
       let!(:second_service) do
         Service.create(
           name: 'AnotherExampleService',
-          url: 'www.another-example-service.com'
+          url: 'http://www.another-example-service.com'
         )
       end
 

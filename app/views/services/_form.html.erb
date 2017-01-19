@@ -1,0 +1,9 @@
+<%= simple_form_for @service do |f| %>
+  <%= f.input :name %>
+  <%= f.input :url,
+              label: 'URL',
+              hint: '(must start with http:// or https://)'
+  %>
+  <br>
+  <%= f.button :submit %>
+<% end %>

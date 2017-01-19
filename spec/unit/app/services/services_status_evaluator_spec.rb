@@ -13,7 +13,7 @@ RSpec.describe ServicesStatusEvaluator do
     let(:service1) do
       Service.create(
         name: 'ExampleService',
-        url: 'www.example-service.com',
+        url: 'http://http://www.example-service.com',
         allowed_codes: [200]
       )
     end
@@ -21,7 +21,7 @@ RSpec.describe ServicesStatusEvaluator do
     let(:service2) do
       Service.create(
         name: 'AnotherExampleService',
-        url: 'www.another-example-service.com',
+        url: 'http://www.another-example-service.com',
         allowed_codes: [200]
       )
     end

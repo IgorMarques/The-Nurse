@@ -19,11 +19,11 @@ RSpec.describe ServicesStatusFetcher do
       [
         Service.new(
           name: 'ExampleService',
-          url: 'www.example-service.com'
+          url: 'http://www.example-service.com'
         ),
         Service.new(
           name: 'AnotherExampleService',
-          url: 'www.another-example-service.com'
+          url: 'http://www.another-example-service.com'
         )
       ]
     end
@@ -33,8 +33,8 @@ RSpec.describe ServicesStatusFetcher do
 
       expect(StatusFetcher).to have_received(:call).with(
         {
-          'ExampleService' => 'www.example-service.com',
-          'AnotherExampleService' => 'www.another-example-service.com',
+          'ExampleService' => 'http://www.example-service.com',
+          'AnotherExampleService' => 'http://www.another-example-service.com',
         }
       )
     end

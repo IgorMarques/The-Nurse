@@ -1,0 +1,14 @@
+<h1>Services</h1>
+
+<%= link_to 'Add a service', new_service_path %>
+
+<%= render @active_services %>
+
+<% if @active_services.empty? %>
+  No services enabled or registered.
+  <%= link_to 'Add a service', new_service_path %>
+<% end %>
+
+<h2>Disabled Services</h2>
+
+<%= render(@inactive_services) || 'All services enabled' %>

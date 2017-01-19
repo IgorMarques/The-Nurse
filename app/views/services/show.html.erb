@@ -1,0 +1,22 @@
+<h1>
+  <%= link_to 'Services', services_path %>
+  > <%= @service.name %>
+</h1>
+
+<%= @service.url %> <br>
+<%= @service.allowed_codes %> <br>
+Added <%= @service.created_at %> <br>
+
+<h2>Outages</h2>
+
+Total: <%= @service.outages.count %> <br><br>
+
+<%= render @service.outages %>
+
+<% if @service.outages.empty? %>
+  No outages registered for this service yet. <br>
+<% end %>
+
+<br>
+
+<%= link_to 'back', :back %>
